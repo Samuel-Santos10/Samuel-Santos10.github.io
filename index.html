@@ -1,19 +1,112 @@
-<!DOCTYPE html> <!--tipo del documento (Lenguaje de Marcacion de Hipertexto)-->
-<html lang="es"> <!--Idioma de la pagina-->
+<!DOCTYPE html>
+<html lang="es"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"  content="width=device-width, initial-scale=1.0">
     <title>Bienvenidos a PROGRA IV</title>
 
-    <!--Hoja de estilo de cascada (Archivo CSS)
-    href="" es para la indicar la ruta o el nombre de nuestro archivo CSS -->
+    <!--CDN para trabajar con Bootstrap CSS-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+    <!--Hoja de estilo de cascada (Archivo CSS) href="" es para la indicar la ruta o el nombre de nuestro archivo CSS -->
     <link rel="stylesheet" href="estilos.css">
     
  </head>
 
     <body> <!--Cuerpo de mi documento-->
    
+        <div id="appAlumnos" class="container">
 
+            <form>
+
+            <div class="row">
+                <div class="col-sm-6 text-center text-white bg-primary">
+                    <h5>INGRESAR ALUMNO</h5>
+                </div>
+
+            <div class="row">
+                <div class="col-sm">Codigo:</div>
+                <div class="col-sm">
+                    <input required pattern="^[A-Z]{2}[0-9]{4}$" type="text" class="form-control form-control-sm">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Nombre:</div>
+                <div class="col-sm"> 
+                <input required pattern="[A-Za-z]{5-60}" type="text" class="form-control form-control-sm">    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Direccion:</div>
+                <div class="col-sm"> 
+                <input type="text" class="form-control form-control-sm">    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Municipio:</div>
+                <div class="col-sm"> 
+                <input type="text" class="form-control form-control-sm">    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Departamento:</div>
+                <div class="col-sm"> 
+                <input type="text" class="form-control form-control-sm">    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Telefono:</div>
+                <div class="col-sm"> 
+                <input type="tel" class="form-control form-control-sm">    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Fecha de Nacimiento:</div>
+                <div class="col-sm"> 
+                <input type="date" class="form-control form-control-sm">    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">Sexo:</div>
+               
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="OptM" id="optMasculino" disabled>
+
+                        <label class="form-check-label" for="optMasculino">
+                            M
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="OptF" id="optFemenino" checked disabled>
+                    
+                  
+                        <label class="form-check-label" for="optFemenino">
+                          F
+                       </label>
+                   </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center">
+                    <input type="submit" value="Guardar" class="btn btn-primary">
+                    <input type="reset" value="Limpiar" class="btn btn-warning">
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </form>
 
 
 
