@@ -11,6 +11,13 @@
 </head>
 <body> <!--Cuerpo de mi documento-->
     Aplicacion web con Vue.js <br>
+
+
+    <p class="parrafo" id="parrafo">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque consectetur reiciendis in error esse hic modi, doloremque vitae ratione fugit natus. Debitis expedita corporis sit vero quae reprehenderit? Quam, amet!Obcaecati voluptatum commodi deserunt ducimus provident earum maxime reprehenderit, blanditiis magni unde cumque at architecto? Perferendis perspiciatis tenetur deleniti quos, facilis optio quam laboriosam consequuntur obcaecati corporis dolore reprehenderit enim?
+
+    </p>
+
     Introduccion a: <br>
    <ul id="Tecnologias">
        <li>HTML5</li>
@@ -30,7 +37,7 @@
 
            <thead>
                <tr>
-                   <td colspan="2">SALUDO</td>
+                   <td colspan="2" align="center">SALUDO</td>
                </tr>
            </thead>
 
@@ -46,18 +53,48 @@
                            <!--placeholder se utiliza para poner texto de fondo 
                           v-model se utiliza para vincular a traves de una directiva, una variable con una caja de texto
                         -->
-                           <input v-model='saludo' placeholder="Escribe nombre"  type="text" name="txtsaludo" id="txtsaludo">
+                           <input pattern="[a-zZ-a]{6,100}" v-model='saludo' placeholder="Escribe nombre"  type="text" name="txtsaludo" id="txtsaludo">
                     
                         </td>
 
                </tr>
+            
 
               <tr>
-                  <!--dentro de doble llave {{}} se convierte en una variable de js-->
-
-                  <td colspan="2">Hola: {{saludo}}, como estas</td>
-                  
+                  <td>Fecha de nacimiento</td>
+                  <td>
+                      <input type="date">
+                  </td>
               </tr>
+
+              <tr>
+                  <td>Tel:</td>
+                  <td>
+                     <input pattern="[0,9]{4}-[0,9]{4}" type="tel">
+                  </td>
+              </tr>
+
+              <tr>
+                <td>Genero</td>
+                <td>
+                   M <input checked type="radio" name="OptGenero" id="OptMasculino">
+                   F <input type="radio" name="OptGenero" id="OptFemenino">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Correo:</td>
+                <td>
+                    <input type="email">
+                </td>
+            </tr>
+
+              <tr>
+                <!--dentro de doble llave {{}} se convierte en una variable de js-->
+
+                <td colspan="2">Hola: {{saludo}}, como estas</td>
+                
+            </tr>
 
                 </tbody>
             </table>

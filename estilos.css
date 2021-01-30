@@ -1,11 +1,51 @@
 /*Reglas de estilo CSS*/
 
+/* el asterisco con llave (*{}) significa selector universal, es decir que combierte todo lo que tengamos */
+*{
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size:  16px;
+
+}
+
 body{
 
- background-color: black; /* color fondo*/
- color: floralwhite; /*color letra*/
+ background-color: rgb(233, 226, 226); /* color fondo*/
+ color: rgb(34, 32, 30); /*color letra*/
  
 }
+
+input [type=text] :valid{
+    background-color: rgb(8, 230, 82);
+    border: 1px solid rgb(184, 183, 183);
+    
+}
+
+input{
+  
+    padding: 3px;
+}
+
+
+input[type=text] :invalid{
+
+    background-color:violet;
+    border: 1px solid rgb(233, 99, 10);
+}
+
+/* el punto (.) se utiliza para acceder a la clase (atributo class) desde html*/
+.parrafo{
+
+    color:rgb(248, 102, 102);
+    background-color: rgb(91, 164, 248);
+}
+
+/* el numeral (#) se utiliza para hacer seleccion de un id*/
+
+#parrafo{
+    text-transform: uppercase;
+}
+
 
 #Tecnologias {
 
