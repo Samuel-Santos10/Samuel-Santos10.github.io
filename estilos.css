@@ -1,0 +1,13 @@
+/*Reglas de estilo CSS*/
+
+body{
+
+ background-color: black; /* color fondo*/
+ color: floralwhite; /*color letra*/
+ 
+}
+
+#Tecnologias {
+
+    text-transform: uppercase;
+}

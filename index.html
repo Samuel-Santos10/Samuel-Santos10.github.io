@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!--tipo del documento (Lenguaje de Marcacion de Hipertexto)-->
+<html lang="es"> <!--Idioma de la pagina-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos a PROGRA IV</title>
+
+    <!--Hoja de estilo de cascada (Archivo CSS)
+    href="" es para la indicar la ruta o el nombre de nuestro archivo CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body> <!--Cuerpo de mi documento-->
+    Aplicacion web con Vue.js <br>
+    Introduccion a: <br>
+   <ul id="Tecnologias">
+       <li>HTML5</li>
+       <li>CSS3</li>
+       <li>JavaScrip</li>
+       <li>Vue.js</li>
+       <li>BootStrap</li>
+       <li>PHP</li>
+       <li>MySQL</li>
+       <li>Nodejs</li>
+       <li>MongoDB</li>
+       <li>Socket.io</li>
+   </ul>
+
+   <form action="" id="frmSaludo" method="POST">
+       <table>
+
+           <thead>
+               <tr>
+                   <td colspan="2">SALUDO</td>
+               </tr>
+           </thead>
+
+           <tbody>
+
+               <tr>
+
+                        <td>
+                                Nombre:
+                        </td>
+
+                        <td> 
+                           <!--placeholder se utiliza para poner texto de fondo 
+                          v-model se utiliza para vincular a traves de una directiva, una variable con una caja de texto
+                        -->
+                           <input v-model='saludo' placeholder="Escribe nombre"  type="text" name="txtsaludo" id="txtsaludo">
+                    
+                        </td>
+
+               </tr>
+
+              <tr>
+                  <!--dentro de doble llave {{}} se convierte en una variable de js-->
+
+                  <td colspan="2">Hola: {{saludo}}, como estas</td>
+                  
+              </tr>
+
+                </tbody>
+            </table>
+        </form> 
+
+        <!--Para utilizar Vue.js necesitamos hacer:
+            1- utilizamos esta url (CDN)
+             antes del /body
+            2- Creamos un archivo de JavaScrip(.js) para trabajar con Vue
+        -->
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        
+        <!--Vinculamos con js-->
+        <script src="main.js"></script>
+
+   <p>Lorem ipsum dolor, sit amet consectetur <br> elit. Eligendi animi, fugiat in quos eos eum ea! Itaque,<br> tempore. Nobis rem minus qui est totam odit mollitia possimus quas maiores officiis!</p>
+
+    </body>
+    </html>
