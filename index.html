@@ -17,96 +17,123 @@
 
     <body> <!--Cuerpo de mi documento-->
    
-        <div id="appAlumnos" class="container">
+        <div id="appAlumnos" class="container-fluid">
 
-            <form>
+            <form v-on:submit.prevent="guardarAlumno" v-on:reset="limpiar" v-on:reset="updte">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="row p-2">
+                            <div class="col-sm text-center text-white bg-primary">
+                                <h5>INGRESAR ALUMNO</h5>
+                            </div>
+                        </div>
 
-            <div class="row">
-                <div class="col-sm-6 text-center text-white bg-primary">
-                    <h5>INGRESAR ALUMNO</h5>
-                </div>
-
-            <div class="row">
-                <div class="col-sm">Codigo:</div>
-                <div class="col-sm">
-                    <input required pattern="^[A-Z]{2}[0-9]{4}$" type="text" class="form-control form-control-sm">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Nombre:</div>
-                <div class="col-sm"> 
-                <input required pattern="[A-Za-z]{5-60}" type="text" class="form-control form-control-sm">    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Direccion:</div>
-                <div class="col-sm"> 
-                <input type="text" class="form-control form-control-sm">    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Municipio:</div>
-                <div class="col-sm"> 
-                <input type="text" class="form-control form-control-sm">    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Departamento:</div>
-                <div class="col-sm"> 
-                <input type="text" class="form-control form-control-sm">    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Telefono:</div>
-                <div class="col-sm"> 
-                <input type="tel" class="form-control form-control-sm">    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Fecha de Nacimiento:</div>
-                <div class="col-sm"> 
-                <input type="date" class="form-control form-control-sm">    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">Sexo:</div>
-               
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="OptM" id="optMasculino" disabled>
-
-                        <label class="form-check-label" for="optMasculino">
-                            M
-                        </label>
+                        <div class="row p-2">
+                            <div class="col-sm">CODIGO:</div>
+                        <div class="col-sm">
+                         <input v-model="alumno.codigo" required pattern="^[A-Z]{2}[0-9]{4}$" type="text" class="form-control form-control-sm">
+                        </div>
                     </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="OptF" id="optFemenino" checked disabled>
-                    
-                  
-                        <label class="form-check-label" for="optFemenino">
-                          F
-                       </label>
-                   </div>
+                        <div class="row p-2">
+                       <div class="col-sm">NOMBRE:</div>
+                        <div class="col-sm"> 
+                        <input v-model="alumno.nombre" required pattern="^[A-Za-z]{5-60}" type="text" class="form-control form-control-sm">    
+                        </div>
+                    </div>
 
-            </div>
+                        <div class="row p-2">
+                            <div class="col-sm">DIRECCION:</div>
+                            <div class="col-sm"> 
+                            <input v-model="alumno.direccion" type="text" class="form-control form-control-sm">    
+                            </div>
+                        </div>
 
-            <div class="row">
-                <div class="col-sm text-center">
-                    <input type="submit" value="Guardar" class="btn btn-primary">
-                    <input type="reset" value="Limpiar" class="btn btn-warning">
+
+                        <div class="row p-2">
+                            <div class="col-sm">MUNICIPIO:</div>
+                            <div class="col-sm"> 
+                            <input v-model="alumno.municipio" type="text" class="form-control form-control-sm">    
+                            </div>
+                        </div>
+
+                        <div class="row p-2">
+                            <div class="col-sm">DEPARTAMENTO:</div>
+                            <div class="col-sm"> 
+                            <input v-model="alumno.departamento" type="text" class="form-control form-control-sm">    
+                            </div>
+                        </div>
+            
+                        <div class="row p-2">
+                            <div class="col-sm">TELEFONO:</div>
+                            <div class="col-sm"> 
+                            <input v-model="alumno.telefono" type="tel" class="form-control form-control-sm">    
+                            </div>
+                        </div>
+            
+                        <div class="row p-2">
+                            <div class="col-sm">FECHA DE NACIMIENTO:</div>
+                            <div class="col-sm"> 
+                            <input v-model="alumno.fechanacimiento" type="date" class="form-control form-control-sm">    
+                            </div>
+                        </div>
+            
+                        <div class="row p-2">
+                            <div class="col-sm">SEXO:</div>
+                            <div class="col-sm"> 
+                            <input v-model="alumno.sexo" type="text" class="form-control form-control-sm">    
+                            </div>
+                        </div>
+
+                        <div class="row -p-2">
+                            <div class="col-sm text-center">
+                                <input type="submit" value="Guardar" class="btn btn-dark">
+                                <input type="reset" value="Limpiar" class="btn btn-warning">
+                                <input type="submit" value="Modificar" class="btn btn-info">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm"></div>
+                    <div class="col-sm-7 p-2">
+                        <div class="row text-center text-white bg-primary">
+                            <div class="col"><h5>ALUMNOS REGISTRADOS</h5></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <table class="tble table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>CODIGO</th>
+                                            <th>NOMBRE</th>
+                                            <th>DIRECCION</th>
+                                            <th>MUNICIPIO</th>
+                                            <th>DEPARTAMENTO</th>
+                                            <th>TELEFONO</th>
+                                            <th>FECHA NACIMIENTO</th>
+                                            <th>SEXO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="aln in alumnos" v-on:click="mostrarAlumno(aln)">
+                                            <td>{{ aln.codigo }}</td>
+                                            <td>{{ aln.nombre }}</td>
+                                            <td>{{ aln.direccion }}</td>
+                                            <td>{{ aln.municipio}}</td>
+                                            <td>{{ aln.departamento}}</td>
+                                            <td>{{ aln.telefono}}</td>
+                                            <td>{{ aln.fechanacimiento}}</td>
+                                            <td>{{ aln.sexo}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-
+            </form>
         </div>
-    </form>
+   
 
 
 
