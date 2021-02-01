@@ -49,8 +49,8 @@ var appVue = new Vue({
             var fecha = document.getElementById("fechanacimiento").value;  
             var sex = document.getElementById("sexo").value; 
 
-            dbObj.transaction(function (tx) {  
-                tx.executeSql('update alumnos set codigo="' + cod + '",nombre="' + nombr + '",direccion=' + direcc + '",municipio=' + municip + '",departamento=' + depar + '",telefono=' + tele + '",fechanacimiento=' + fecha + '",sexo=' + sex + ' where idAlumno=' + id + '');  
+            dbObj.transaction(tran =>{  
+                tx.executeSql('UPDATE alumnos SET codigo="' + cod + '",nombre="' + nombr + '",direccion=' + direcc + '",municipio=' + municip + '",departamento=' + depar + '",telefono=' + tele + '",fechanacimiento=' + fecha + '",sexo=' + sex + ' where idAlumno=' + id + '');  
             });  
   
             this.obtenerAlumnos();  
