@@ -8,7 +8,7 @@ Vue.component('component-registro_alumnos',{
             buscar              : "",
 
             registro_alumno:{
-                
+
                 idRegistro  : 0,
                 codigo              : '',
                 nombre              : '',
@@ -54,7 +54,7 @@ Vue.component('component-registro_alumnos',{
             if( this.accion=='nuevo' ){
                 this.registro_alumno.idRegistro = generarIdUnicoDesdeFecha();
                 
-                let data = await this.buscandoCodigoAlumnos(store);
+                let data = await this.buscandoCodigoAlumno(store);
                 duplicado = data.result!=undefined;
             }
             if( duplicado==false){
@@ -151,54 +151,54 @@ Vue.component('component-registro_alumnos',{
             <div class="row p-2">
                 <div class="col-sm">CODIGO:</div>
                 <div class="col-sm">
-                    <input v-model="alumno.codigo" required pattern="^[A-Z]{4}[0-9]{6}$" type="text" class="form-control form-control-sm">
+                    <input v-model="registro_alumno.codigo" required pattern="^[A-Z]{4}[0-9]{6}$" type="text" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">NOMBRE:</div>
            <div class="col-sm">
-               <input v-model="alumno.nombre"  type="text" class="form-control form-control-sm">
+               <input v-model="registro_alumno.nombre"  type="text" class="form-control form-control-sm">
            </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">DIRECCION:</div>
            <div class="col-sm">
-               <input v-model="alumno.direccion"  type="text" class="form-control form-control-sm">
+               <input v-model="registro_alumno.direccion"  type="text" class="form-control form-control-sm">
            </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">MUNICIPIO:</div>
                 <div class="col-sm">
-                    <input v-model="alumno.municipio"  type="text" class="form-control form-control-sm">
+                    <input v-model="registro_alumno.municipio"  type="text" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">DEPARTAMENTO:</div>
                 <div class="col-sm">
-                    <input v-model="alumno.departamento" type="text" class="form-control form-control-sm">
+                    <input v-model="registro_alumno.departamento" type="text" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">TELEFONO:</div>
                 <div class="col-sm">
-                    <input v-model="alumno.telefono"  type="tel" class="form-control form-control-sm">
+                    <input v-model="registro_alumno.telefono"  type="tel" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">FECHA NACIMIENTO:</div>
                 <div class="col-sm">
-                    <input v-model="alumno.fechaN" type="date" class="form-control form-control-sm">
+                    <input v-model="registro_alumno.fechaN" type="date" class="form-control form-control-sm">
                 </div>
             </div>
                <div class="row p-2">
                 <div class="col-sm">SEXO:</div>
                 <div class="col-sm">
-                    <input v-model="alumno.sexo" type="tel" class="form-control form-control-sm">
+                    <input v-model="registro_alumno.sexo" type="tel" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2">
                         <div class="col-sm text-center">
-                            <input type="submit" value="Guardar" class="btn btn-dark">
+                            <input type="submit" value="Guardar" class="btn btn-success">
                             <input type="reset" value="Limpiar" class="btn btn-warning">
                         </div>
                     </div>
@@ -212,7 +212,7 @@ Vue.component('component-registro_alumnos',{
                 </div>
                 <div class="col-sm"></div>
                 <div class="col-sm-6 p-2">
-                    <div class="row text-center text-white bg-primary">
+                    <div class="row text-center text-white bg-danger">
                         <div class="col"><h5>ALUMNOS REGISTRADOS</h5></div>
                     </div>
                     <div class="row">
