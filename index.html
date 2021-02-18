@@ -33,8 +33,8 @@
       </nav>
 
     <div id="appSistema" class="container-fluid">
-        <component-matricula ref="matricula" v-show="forms['matricula'].mostrar"></component-matricula>
         <component-registro_alumnos ref="registro_alumnos" v-show="forms['registro_alumnos'].mostrar"></component-registro_alumnos>
+        <component-matricula ref="matricula" v-show="forms['matricula'].mostrar"></component-matricula>
         <component-inscripcion ref="inscripcion" v-show="forms['inscripcion'].mostrar"></component-inscripcion>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
