@@ -8,6 +8,7 @@ var appVue = new Vue({
         forms:{
             'registro_alumnos':{mostrar:false},
             'matricula':{mostrar:false},
+            'materias':{mostrar:false},
             'inscripcion':{mostrar:false},
         }
     },
@@ -19,6 +20,7 @@ var appVue = new Vue({
 
                     tblmatricula = req.createObjectStore('tblmatricula',{keyPath:'idMatricula'}),
                     tblregistro = req.createObjectStore('tblregistro',{keyPath:'idRegistro'}),
+                    tblmateria = req.createObjectStore('tblmateria',{keyPath:'idMateria'}),
                     tblinscripcion = req.createObjectStore('tblinscripcion',{keyPath:'idInscripcion'})
 
                 tblmatricula.createIndex('idMatricula','idMatricula',{unique:true});
@@ -27,6 +29,9 @@ var appVue = new Vue({
                 
                 tblregistro.createIndex('idRegistro','idRegistro',{unique:true});
                 tblregistro.createIndex('codigo','codigo',{unique:false});
+
+                tblmateria.createIndex('idMateria','idMateria',{unique:true});
+                tblmateria.createIndex('codigo','codigo',{unique:false});
 
                 tblinscripcion.createIndex('idInscripcion','idInscripcion',{unique:true});
                 tblinscripcion.createIndex('codigo','codigo',{unique:false});

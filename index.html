@@ -26,6 +26,9 @@
                 <a class="nav-link mostrar" data-form="matricula" href="#">Matricula</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link mostrar" data-form="materias" href="#">Materias</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link mostrar" data-form="inscripcion" href="#">Incripcion Materias</a>
               </li>
             </ul>
@@ -36,12 +39,14 @@
     <div id="appSistema" class="container-fluid">
         <component-registro_alumnos ref="registro_alumnos" v-show="forms['registro_alumnos'].mostrar"></component-registro_alumnos>
         <component-matricula ref="matricula" v-show="forms['matricula'].mostrar"></component-matricula>
+        <component-materias ref="materias" v-show="forms['materias'].mostrar"></component-materias>
         <component-inscripcion ref="inscripcion" v-show="forms['inscripcion'].mostrar"></component-inscripcion>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-select@latest"></script>
     <script src="matricula.js"></script>
     <script src="registro_alumnos.js"></script>
+    <script src="materias.js"></script>
     <script src="inscripcion.js"></script>
     <script src="main.js"></script>
 </body>
