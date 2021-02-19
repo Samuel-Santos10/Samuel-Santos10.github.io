@@ -143,7 +143,7 @@ Vue.component('component-registro_alumnos',{
                                     <h5>REGISTRO DE ALUMNOS</h5>
                                 </div>
                                 <div class="col-1 align-middle" >
-                                    <button type="button" onclick="appVue.forms['registro_alumno'].mostrar=false" class="btn-close" aria-label="Close"></button>
+                                    <button type="button" onclick="appVue.forms['registro_alumnos'].mostrar=false" class="btn-close" aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>
