@@ -23,6 +23,7 @@ var appVue = new Vue({
 
                 tblmatricula.createIndex('idMatricula','idMatricula',{unique:true});
                 tblmatricula.createIndex('codigo','codigo',{unique:false});
+                tblmatricula.createIndex('id','id',{unique:false});
                 
                 tblregistro.createIndex('idRegistro','idRegistro',{unique:true});
                 tblregistro.createIndex('codigo','codigo',{unique:false});
