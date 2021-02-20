@@ -10,145 +10,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 
-    <!--Hoja de estilo de cascada (Archivo CSS) href="" es para la indicar la ruta o el nombre de nuestro archivo CSS -->
-    <link rel="stylesheet" href="estilos.css">
-    
  </head>
 
-    <body> <!--Cuerpo de mi documento-->
-   
-        <div id="appAlumnos" class="container-fluid">
-
-            <form v-on:submit.prevent="guardarAlumno" v-on:reset="limpiar" v-on:reset="updte">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="row p-2">
-                            <div class="col-sm text-center text-white bg-primary">
-                                <h5>INGRESAR ALUMNO</h5>
-                            </div>
-                        </div>
-
-                        <div class="row p-2">
-                            <div class="col-sm">CODIGO:</div>
-                        <div class="col-sm">
-                         <input v-model="alumno.codigo" required pattern="^[A-Z]{2}[0-9]{4}$" type="text" class="form-control form-control-sm">
-                        </div>
-                    </div>
-
-                        <div class="row p-2">
-                       <div class="col-sm">NOMBRE:</div>
-                        <div class="col-sm"> 
-                        <input v-model="alumno.nombre" required pattern="^[A-Za-z]{5-60}" type="text" class="form-control form-control-sm">    
-                        </div>
-                    </div>
-
-                        <div class="row p-2">
-                            <div class="col-sm">DIRECCION:</div>
-                            <div class="col-sm"> 
-                            <input v-model="alumno.direccion" type="text" class="form-control form-control-sm">    
-                            </div>
-                        </div>
-
-
-                        <div class="row p-2">
-                            <div class="col-sm">MUNICIPIO:</div>
-                            <div class="col-sm"> 
-                            <input v-model="alumno.municipio" type="text" class="form-control form-control-sm">    
-                            </div>
-                        </div>
-
-                        <div class="row p-2">
-                            <div class="col-sm">DEPARTAMENTO:</div>
-                            <div class="col-sm"> 
-                            <input v-model="alumno.departamento" type="text" class="form-control form-control-sm">    
-                            </div>
-                        </div>
-            
-                        <div class="row p-2">
-                            <div class="col-sm">TELEFONO:</div>
-                            <div class="col-sm"> 
-                            <input v-model="alumno.telefono" type="tel" class="form-control form-control-sm">    
-                            </div>
-                        </div>
-            
-                        <div class="row p-2">
-                            <div class="col-sm">FECHA DE NACIMIENTO:</div>
-                            <div class="col-sm"> 
-                            <input v-model="alumno.fechanacimiento" type="date" class="form-control form-control-sm">    
-                            </div>
-                        </div>
-            
-                        <div class="row p-2">
-                            <div class="col-sm">SEXO:</div>
-                            <div class="col-sm"> 
-                            <input v-model="alumno.sexo" type="text" class="form-control form-control-sm">    
-                            </div>
-                        </div>
-
-                        <div class="row -p-2">
-                            <div class="col-sm text-center">
-                                <input type="submit" value="Guardar" class="btn btn-dark">
-                                <input type="reset" value="Limpiar" class="btn btn-warning">
-                                <input type="submit" value="Modificar" class="btn btn-info">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm"></div>
-                    <div class="col-sm-7 p-2">
-                        <div class="row text-center text-white bg-primary">
-                            <div class="col"><h5>ALUMNOS REGISTRADOS</h5></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <table class="tble table-sm">
-                                    <thead>
-                                        <tr>
-                                            <th>CODIGO</th>
-                                            <th>NOMBRE</th>
-                                            <th>DIRECCION</th>
-                                            <th>MUNICIPIO</th>
-                                            <th>DEPARTAMENTO</th>
-                                            <th>TELEFONO</th>
-                                            <th>FECHA NACIMIENTO</th>
-                                            <th>SEXO</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="aln in alumnos" v-on:click="mostrarAlumno(aln)">
-                                            <td>{{ aln.codigo }}</td>
-                                            <td>{{ aln.nombre }}</td>
-                                            <td>{{ aln.direccion }}</td>
-                                            <td>{{ aln.municipio}}</td>
-                                            <td>{{ aln.departamento}}</td>
-                                            <td>{{ aln.telefono}}</td>
-                                            <td>{{ aln.fechanacimiento}}</td>
-                                            <td>{{ aln.sexo}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+ <body><!-- Cuerpo de mi documento -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">::. SISTEMA ACADEMICO .::</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link mostrar" data-form="registro_alumnos" href="#">Registro Alumno</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mostrar" data-form="matricula" href="#">Matricula</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mostrar" data-form="inscripcion" href="#">Incripcion Materias</a>
+              </li>
+            </ul>
+          </div>
         </div>
-   
+      </nav>
 
-
-
-
-        <!--Para utilizar Vue.js necesitamos hacer:
-            1- utilizamos esta url (CDN)
-             antes del /body
-            2- Creamos un archivo de JavaScrip(.js) para trabajar con Vue
-        -->
-
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-        
-        <!--3- Vinculamos con js-->
-        <script src="main.js"></script>
-
-
-    </body>
-    </html>
+    <div id="appSistema" class="container-fluid">
+        <component-matricula ref="matricula" v-show="forms['matricula'].mostrar"></component-matricula>
+        <component-registro_alumnos ref="registro_alumnos" v-show="forms['registro_alumnos'].mostrar"></component-registro_alumnos>
+        <component-inscripcion ref="inscripcion" v-show="forms['inscripcion'].mostrar"></component-inscripcion>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="matricula.js"></script>
+    <script src="registro_alumnos.js"></script>
+    <script src="inscripcion.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
