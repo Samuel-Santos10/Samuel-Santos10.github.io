@@ -99,15 +99,15 @@ Vue.component('component-registro_alumnos',{
         },
         limpiar(){
             this.accion='nuevo';
-            this.producto.idRegistro='';
-            this.producto.codigo='';
-            this.producto.nombre='';
-            this.producto.direccion='';
-            this.producto.municipio='';
-            this.producto.departamento='';
-            this.producto.telefono='';
-            this.producto.fechaN='';
-            this.producto.sexo='';
+            this.registro_alumno.idRegistro='';
+            this.registro_alumno.codigo='';
+            this.registro_alumno.nombre='';
+            this.registro_alumno.direccion='';
+            this.registro_alumno.municipio='';
+            this.registro_alumno.departamento='';
+            this.registro_alumno.telefono='';
+            this.registro_alumno.fechaN='';
+            this.registro_alumno.sexo='';
             this.obtenerDatos();
         },
         eliminarAlumnos(alum){
