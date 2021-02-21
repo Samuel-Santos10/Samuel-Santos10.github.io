@@ -25,14 +25,16 @@ Vue.component('component-registro_alumnos',{
     },
     methods:{
         buscandoAlumnos(){
-            this.registro_alumnos = this.registro_alumnos.filter((element,index,registro_alumnos) => element.nombre.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.nombre.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 );
+            this.registro_alumnos = this.registro_alumnos.filter((element,index,registro_alumnos) => element.nombre.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.codigo.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.direccion.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.departamento.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.municipio.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.telefono.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.sexo.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 );
             if( this.buscar.length<=0){
                 this.obtenerDatos();
             }
         },
+        
         buscandoCodigoAlumno(store){
             let buscarCodigo = new Promise( (resolver,rechazar)=>{
                 let index = store.index("codigo"),
+                
                     data = index.get(this.registro_alumno.codigo);
                 data.onsuccess=evt=>{
                     resolver(data);
@@ -70,7 +72,7 @@ Vue.component('component-registro_alumnos',{
                     console.log( event );
                 };
             } else{
-                this.mostrarMsg('Codigo de producto duplicado',true);
+                this.mostrarMsg('Codigo de alumno duplicado',true);
             }
         },
         mostrarMsg(msg, error){
@@ -149,7 +151,7 @@ Vue.component('component-registro_alumnos',{
                         </div>
                     </div>
             <div class="row p-2">
-                <div class="col-sm">CODIGO:</div>
+                <div class="col-sm">CODIGO REGISTRO:</div>
                 <div class="col-sm">
                     <input v-model="registro_alumno.codigo" required pattern="^[A-Z]{4}[0-9]{6}$" type="text" class="form-control form-control-sm">
                 </div>
@@ -225,7 +227,7 @@ Vue.component('component-registro_alumnos',{
                                         </td>
                                     </tr>
                                     <tr>
-                                    <th>CODIGO</th>
+                                    <th>CODIGO REG.</th>
                                     <th>NOMBRE</th>
                                     <th>DIRECCION</th>
                                     <th>MUNICIPIO</th>

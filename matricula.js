@@ -14,9 +14,9 @@ Vue.component('component-matricula',{
                 },
                 idMatricula : 0,
                 codigo    : '',
-                nombre    : '',
-                ciclo : '',
-                fecha : ''
+                dui       : '',
+                ciclo     : '',
+                fecha     : ''
             },
             matricula:[],
             registro_alumnos:[]
@@ -24,7 +24,7 @@ Vue.component('component-matricula',{
     },
     methods:{
         buscandoMatricula(){
-            this.matricula = this.matricula.filter((element,index,matricula) => element.nombre.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.codigo.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 );
+            this.matricula = this.matricula.filter((element,index,matricula) => element.codigo.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.dui.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 || element.ciclo.toUpperCase().indexOf(this.buscar.toUpperCase())>=0 );
             if( this.buscar.length<=0){
                 this.obtenerDatos();
             }
@@ -42,6 +42,7 @@ Vue.component('component-matricula',{
             });
             return buscarCodigo;
         },
+        
         async guardarMatricula(){
             /**
              * webSQL -> DB Relacional en el navegador
@@ -69,7 +70,7 @@ Vue.component('component-matricula',{
                     console.log( event );
                 };
             } else{
-                this.mostrarMsg('Codigo de matricula duplicado',true);
+                this.mostrarMsg('Codigo de alumno duplicado',true);
             }
         },
         mostrarMsg(msg, error){
@@ -110,7 +111,7 @@ Vue.component('component-matricula',{
             this.matricula.registro_alumno.label="";
             this.matricula.idMatricula='';
             this.matricula.codigo='';
-            this.matricula.nombre='';
+            this.matricula.dui='';
             this.matricula.ciclo='';
             this.matricula.fecha='';
             this.obtenerDatos();
@@ -154,21 +155,21 @@ Vue.component('component-matricula',{
                     </div>
                 </div>
                 <div class="row p-2">
-                        <div class="col-sm">ALMACENADOS:</div>
+                        <div class="col-sm">ALUMNO:</div>
                         <div class="col-sm">
                             <v-select-registro_alumnos v-model="matricula.registro_alumno" :options="registro_alumnos" placeholder="Por favor seleccione el nombre del registro"/>
                         </div>
                     </div>
                 <div class="row p-2">
-                    <div class="col-sm">CODIGO:</div>
+                    <div class="col-sm">CODIGO ALUMNO:</div>
                     <div class="col-sm">
                         <input v-model="matricula.codigo" required pattern="^[A-Z]{4}[0-9]{6}$" type="text" class="form-control form-control-sm" >
                     </div>
                 </div>
                 <div class="row p-2">
-                    <div class="col-sm">NOMBRE: </div>
+                    <div class="col-sm">DUI: </div>
                     <div class="col-sm">
-                        <input v-model="matricula.nombre" type="text" class="form-control form-control-sm">
+                        <input v-model="matricula.dui" type="text" class="form-control form-control-sm">
                     </div>
                 </div>
                 <div class="row p-2">
@@ -212,18 +213,18 @@ Vue.component('component-matricula',{
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>CODIGO</th>
-                                    <th>NOMBRE</th>
+                                    <th>CODIGO ALUM</th>
+                                    <th>DUI</th>
                                     <th>CICLO</th>
                                     <th>FECHA MATRICULA</th>
-                                    <th>REGISTRO</th>
+                                    <th>ALUMNO</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="matri in matricula" v-on:click="mostrarMatricula(matri)">
                                     <td>{{ matri.codigo }}</td>
-                                    <td>{{ matri.nombre }}</td>
+                                    <td>{{ matri.dui }}</td>
                                     <td>{{ matri.ciclo }}</td>
                                     <td>{{ matri.fecha }}</td>
                                     <td>{{ matri.registro_alumno.label }}</td>
