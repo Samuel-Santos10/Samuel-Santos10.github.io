@@ -118,7 +118,8 @@ Vue.component('component-materias',{
         }
     },
     created(){
-        
+                //this.obtenerDatos();
+
     },
     template:`
     <form v-on:submit.prevent="guardarMateria" v-on:reset="limpiar">
@@ -139,13 +140,13 @@ Vue.component('component-materias',{
             <div class="row p-2">
                 <div class="col-sm">CODIGO:</div>
                 <div class="col-sm">
-                    <input v-model="materias.codigo" required pattern="^[A-Z]{4}[0-9]{6}$" type="text" class="form-control form-control-sm">
+                    <input v-model="materia.codigo" required pattern="^[A-Z]{4}[0-9]{6}$" type="text" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-sm">NOMBRE:</div>
            <div class="col-sm">
-               <input v-model="materias.nombre"  type="text" class="form-control form-control-sm">
+               <input v-model="materia.nombre"  type="text" class="form-control form-control-sm">
            </div>
             </div>
             <div class="row p-2">
