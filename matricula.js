@@ -226,7 +226,7 @@ Vue.component('component-matricula',{
                                     <td>{{ matri.nombre }}</td>
                                     <td>{{ matri.ciclo }}</td>
                                     <td>{{ matri.fecha }}</td>
-                                    <td>{{ matri.registro_alumnos.label }}</td>
+                                    <td>{{ matri.registro_alumno.label }}</td>
                                     <td>
                                         <a @click.stop="eliminarMatricula(matri)" class="btn btn-danger">DEL</a>
                                     </td>
