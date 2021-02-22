@@ -8,11 +8,12 @@ Vue.component('component-matricula',{
             error  : false,
             buscar : "",
             matricula:{
+                idMatricula : 0,
                 registro_alumno : {
                     id : 0,
                     label : ''
                 },
-                idMatricula : 0,
+                
                 codigo    : '',
                 dui       : '',
                 ciclo     : '',
