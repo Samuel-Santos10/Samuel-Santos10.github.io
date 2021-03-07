@@ -22,6 +22,9 @@
               <li class="nav-item">
                 <a class="nav-link mostrar" data-form="clientes" href="#">CLIENTES</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link mostrar" data-form="lecturas" href="#">LECTURAS</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -29,10 +32,12 @@
 
     <div id="appSistema" class="container-fluid">
         <component-clientes ref="clientes" v-show="forms['clientes'].mostrar"></component-clientes>
+        <component-lecturas ref="lecturas" v-show="forms['lecturas'].mostrar"></component-lecturas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js%22%3E</script>
-    <script src="https://unpkg.com/vue-select@latest%22%3E</script>
-    <script src="clientes.js"></script>
-    <script src="main.js"></script>
+      <script src="https://unpkg.com/vue-select@latest"></script>
+      <script src="lecturas.js"></script>
+      <script src="clientes.js"></script>
+      <script src="main.js"></script>
 </body>
 </html>
